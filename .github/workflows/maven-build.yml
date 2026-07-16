@@ -24,7 +24,7 @@ jobs:
         with:
           java-version: ${{matrix.java}} #install java version in matrix
           distribution: 'adopt' #package and distribute jdk; adopt one of many companies that package jdk
-          cache: maven #remember what we downloaded last time so dont redo. Maven downloads .jar files every time it builds
+          #cache: maven #remember what we downloaded last time so dont redo. Maven downloads .jar files every time it builds
       - name: Build with Maven Wrapper
         run: ./mvnw -B package #download and run a specific pinned version of maven in the repo
       - name: Upload build artifact
