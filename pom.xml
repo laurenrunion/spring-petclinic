@@ -412,4 +412,17 @@
     </profile>
   </profiles>
 
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>Nexus Release Repository</name>
+      <url>http://http://172.16.58.135:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://172.16.58.135:8081/repository/maven-releases/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
