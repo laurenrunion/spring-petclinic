@@ -416,7 +416,7 @@
     <repository>
       <id>nexus</id>
       <name>Nexus Release Repository</name>
-      <url>http://172.16.58.135:8081/repository/maven-snapshots/</url>
+      <url>http://172.16.58.135:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>nexus</id>
