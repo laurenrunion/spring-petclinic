@@ -23,22 +23,22 @@ jobs:
           distribution: 'adopt'
 
       - name: Configure Maven settings for Nexus
-        env:
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
         run: |
           mkdir -p ~/.m2
-          cat > ~/.m2/settings.xml << EOF
+          cat > ~/.m2/settings.xml << 'EOF'
           <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
             <servers>
               <server>
                 <id>nexus</id>
-                <username>${NEXUS_USERNAME}</username>
-                <password>${NEXUS_PASSWORD}</password>
+                <username>${env.NEXUS_USERNAME}</username>
+                <password>${env.NEXUS_PASSWORD}</password>
               </server>
             </servers>
           </settings>
           EOF
-
+      
       - name: Build and Deploy to Nexus
+        env:
+          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
         run: ./mvnw -B deploy -DskipTests
