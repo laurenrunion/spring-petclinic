@@ -107,6 +107,14 @@
     </dependency>
     <!-- end of webjars -->
 
+    <!-- joda-time-->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.12.7</version> <!-- check Maven Central for the latest -->
+    </dependency>
+    <!-- joda-time -->
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
